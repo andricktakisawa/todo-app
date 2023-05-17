@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do App</title>
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@andrickblogs" />
+    <meta
+      name="description"
+      content="Guarda aquellas tareas pendientes y ten en cuenta tu progreso es su finalización"
+    />
+
+    <meta name="theme-color" content="#337beb" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://andrickblogs.com"
+    />
+    <meta property="og:title" content="TO DO List" />
+    <meta
+      property="og:description"
+      content="Guarda aquellas tareas pendientes y ten en cuenta tu progreso es su finalización"
+    />
+    <meta property="og:site_name" content="XNOR" />
+    <meta
+      property="og:image"
+      content="https://andrickblogs.com"
+    />
+    <meta property="og:image:alt" content="Preview" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+
+    <meta name="google" content="notranslate" />
+
+    <link rel="manifest" href="manifest.json" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="assets/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/favicon.png" />
+    <link rel="apple-touch-startup-image" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script>
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+      let theme = window.localStorage.getItem("theme");
+      if (theme !== null && theme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+    <div class="superior-cont">
+      <header>
+        <button class="discard-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="ionicon"
+            viewBox="0 0 512 512"
+            width="2em"
+            height="2em"
+          >
+            <title>Trash</title>
+            <path
+              d="M112 112l20 320c.95 18.49 14.4 32 32 32h184c17.67 0 30.87-13.51 32-32l20-320"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+            />
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              stroke-width="32"
+              d="M80 112h352"
+            />
+            <path
+              d="M192 112V72h0a23.93 23.93 0 0124-24h80a23.93 23.93 0 0124 24h0v40M256 176v224M184 176l8 224M328 176l-8 224"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+            />
+          </svg>
+        </button>
+        <button class="fullscreen">
+          <svg
+            width="2em"
+            height="2em"
+            xmlns="http://www.w3.org/2000/svg"
+            class="ionicon"
+            viewBox="0 0 512 512"
+          >
+            <title>Expand</title>
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+              d="M432 320v112H320M421.8 421.77L304 304M80 192V80h112M90.2 90.23L208 208M320 80h112v112M421.77 90.2L304 208M192 432H80V320M90.23 421.8L208 304"
+            />
+          </svg>
+        </button>
+        <h1>To-Do App </h1>
+        <button class="moon-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="ionicon"
+            viewBox="0 0 512 512"
+            width="2em"
+            height="2em"
+          >
+            <title>Moon</title>
+            <path
+              d="M160 136c0-30.62 4.51-61.61 16-88C99.57 81.27 48 159.32 48 248c0 119.29 96.71 216 216 216 88.68 0 166.73-51.57 200-128-26.39 11.49-57.38 16-88 16-119.29 0-216-96.71-216-216z"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+            />
+          </svg>
+        </button>
+        <button class="search-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="ionicon"
+            viewBox="0 0 512 512"
+            width="2em"
+            height="2em"
+          >
+            <title>Search</title>
+            <path
+              d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
+              fill="none"
+              stroke="currentColor"
+              stroke-miterlimit="10"
+              stroke-width="32"
+            />
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              stroke-width="32"
+              d="M338.29 338.29L448 448"
+            />
+          </svg>
+        </button>
+      </header>
+      <div class="alert">Alert</div>
+      <div class="container">
+        <div class="search-box">
+          <input type="text" placeholder="Buscar tarea..." maxlength="20" />
+        </div>
+        <ul class="tasks">
+          <li class="spacer">
+            <p>Tareas: <span id="nTasks">0</span></p>
+            <p>Completadas: <span id="nCompletedTasks">0</span></p>
+            <p>Sin completar: <span id="nIncompleteTasks">0</span></p>
+          </li>
+        </ul>
+      </div>
+      <div id="deco">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="ionicon"
+          viewBox="0 0 512 512"
+        >
+          <title>Arrow Down</title>
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="48"
+            d="M112 268l144 144 144-144M256 392V100"
+          />
+        </svg>
+      </div>
+      <div class="btn-container">
+        <button class="select-btn" value=""></button>
+        <button class="add-btn show" value=""></button>
+        <button class="delete-btn" value="">
+          <svg
+            width="2.25em"
+            height="2.25em"
+            xmlns="http://www.w3.org/2000/svg"
+            class="ionicon"
+            viewBox="0 0 512 512"
+          >
+            <title>Trash</title>
+            <path
+              d="M112 112l20 320c.95 18.49 14.4 32 32 32h184c17.67 0 30.87-13.51 32-32l20-320"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+            />
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              stroke-width="32"
+              d="M80 112h352"
+            />
+            <path
+              d="M192 112V72h0a23.93 23.93 0 0124-24h80a23.93 23.93 0 0124 24h0v40M256 176v224M184 176l8 224M328 176l-8 224"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>
